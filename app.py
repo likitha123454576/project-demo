@@ -15,13 +15,13 @@ from pydantic import BaseModel, Field
 APP_ENV = os.getenv("APP_ENV", "local")
 RELEASE_VERSION = os.getenv("RELEASE_VERSION", "local")
 
-
 app = FastAPI(
     title="Production Packaging Training API - Version 2",
     version=RELEASE_VERSION,
     docs_url=None if APP_ENV == "production" else "/docs",
     redoc_url=None if APP_ENV == "production" else "/redoc",
 )
+
 
 
 class Caller(BaseModel):
